@@ -101,7 +101,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "linux-vm-${count.index + 1}"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  size                = "Standard_B2s"
+  size                = "Standard_B2ats_v2"
 
   admin_username = var.admin_username
 
@@ -114,8 +114,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   os_disk {
     caching              = "ReadWrite"
-    storage_account_type = "Premium_LRS"
-    disk_size_gb         = 64
+    storage_account_type =  "StandardSSD_LRS"
+    disk_size_gb        = 64
   }
 
   source_image_reference {
@@ -138,7 +138,7 @@ resource "azurerm_managed_disk" "disk" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
-  storage_account_type = "Premium_LRS"
+  storage_account_type = "StandardSSD_LRS"
 
   create_option = "Empty"
 

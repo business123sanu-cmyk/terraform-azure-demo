@@ -1,6 +1,6 @@
-subscription_id = "YOUR-AZURE-SUBSCRIPTION-ID"
+subscription_id = "f6f29868-be5f-4840-83e4-043a58d094a0"
 
-location = "Central India"
+location = "eastasia"
 
 admin_username = "azureuser"
 
